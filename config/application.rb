@@ -21,7 +21,7 @@ module Brimir
 
     # Change this to :ldap_authenticatable to use ldap
     config.devise_authentication_strategy = :database_authenticatable
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :fa
     config.i18n.fallbacks = [:en]
 
     # Do not swallow errors in after_commit/after_rollback callbacks.

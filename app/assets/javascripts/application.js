@@ -103,9 +103,10 @@
       selector: 'textarea.tinymce',
       statusbar: false,
       menubar: false,
-      toolbar: 'undo redo | bold italic | bullist numlist | outdent indent removeformat',
+      directionality : 'rtl',
+      toolbar: 'undo redo | bold italic | bullist numlist | outdent indent removeformat | ltr rtl',
       height: 150,
-      plugins: 'autoresize,paste',
+      plugins: 'autoresize,paste,directionality',
     });
 
     jQuery(document).foundation();
