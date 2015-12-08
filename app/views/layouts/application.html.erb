@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="<%=I18n.locale %>" dir="<%= 'rtl' if [:fa,:ar].include?(I18n.locale)%>"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html class="ie6" lang="<%= I18n.locale %>" dir="<%= 'rtl' if @rtl %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="<%= I18n.locale %>" dir="<%= 'rtl' if @rtl %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="<%= I18n.locale %>" dir="<%= 'rtl' if @rtl %>"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="<%= I18n.locale %>" dir="<%= 'rtl' if @rtl %>"> <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : 'Brimir' %></title>
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic' %>
-    <%= stylesheet_link_tag 'application' %>
+
+    <% if @rtl %>
+      <%= stylesheet_link_tag 'application-rtl' %>
+    <% else %>
+      <%= stylesheet_link_tag 'application' %>
+    <% end %>
+
     <%= stylesheet_link_tag 'application-print', media: 'print' %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body style="<%= 'background: #30363e' if user_signed_in? %>">
+  <body style="<%= 'direction:rtl;' if [:ar].include?(I18n.locale)%> <%= 'background: #30363e' if user_signed_in? %>">
 
     <% if user_signed_in? %>
       <nav class="top-bar" data-topbar>
