@@ -34,5 +34,8 @@ Capfile
 # rcov files
 coverage
 
+# databse conf 
+config/database.yml
+
 # ignore rubymine
 .idea
