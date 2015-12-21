@@ -80,3 +80,8 @@ gem 'fancybox2-rails', '~> 0.2.8'
 
 # gravatar for user avatar images
 gem 'gravatar_image_tag'
+
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
