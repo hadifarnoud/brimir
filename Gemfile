@@ -28,9 +28,9 @@ group :test do
   gem 'rake'
 
   # for coveralls
-  
+  gem 'coveralls'
 end
-gem 'coveralls'
+
 # Optional PostgreSQL for production
 gem 'pg', group: :postgresql
 # Optional MySQL for production
